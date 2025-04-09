@@ -428,21 +428,21 @@ function App() {
           </form>
         </header>
 
-        {!input
+        {input
           ? (
-            <div className="flex items-center justify-center flex-col">
-              {character && (
-                <Card character={character} key={character.id} />
-              )}
-            </div>
-          )
-          : (
             <div className='grid grid-cols-2 gap-3'>
               {allCharacters && allCharacters.length > 0 && (
                 allCharacters.map(character => (
                   <Card character={character} key={character.id} />
                 ))
 
+              )}
+            </div>
+          )
+          : (
+            <div className="flex items-center justify-center flex-col">
+              {character && (
+                <Card character={character} key={character.id} />
               )}
             </div>
           )
@@ -458,7 +458,7 @@ export default App
 ```
 
 ### 8. Update App.jsx
-Fixing issue.
+Fix.
 
 ```javascript
 import { useEffect, useState } from "react"
@@ -468,7 +468,7 @@ import logo from "./assets/image.png"
 
 function App() {
 
-  const [characters, setCharacters] = useState(null)
+  const [allCharacters, setAllCharacters] = useState(null)
   const [character, setCharacter] = useState(null)
   const [input, setInput] = useState('')
 
@@ -494,7 +494,7 @@ function App() {
 
   useEffect(() => {
     if (!input) {
-      setCharacters(null)
+      setAllCharacters(null)
     }
   }, [input])
 
@@ -505,7 +505,7 @@ function App() {
       const response = await fetch(url)
       const data = await response.json()
       console.log(data)
-      setCharacters(data.results)
+      setAllCharacters(data.results)
     } catch (error) {
       console.log(error)
     }
@@ -537,21 +537,21 @@ function App() {
 
 
 
-        {!input
+        {input
           ? (
-            <div className="flex items-center justify-center flex-col">
-              {character && (
+            <div className='grid grid-cols-2 gap-3'>
+              {allCharacters && allCharacters.length > 0 && (
+                allCharacters.map(character => (
                   <Card character={character} key={character.id} />
+                ))
+
               )}
             </div>
           )
           : (
-            <div className='grid grid-cols-2 gap-3'>
-              {characters && characters.length > 0 && (
-                characters.map(character => (
-                    <Card character={character} key={character.id} />
-                ))
-
+            <div className="flex items-center justify-center flex-col">
+              {character && (
+                <Card character={character} key={character.id} />
               )}
             </div>
           )
