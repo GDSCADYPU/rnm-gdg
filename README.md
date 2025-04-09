@@ -185,7 +185,7 @@ function App() {
   }, [])
 
   const fetchCharacters = async (e) => {
-    e.preventDefault(0)
+    e.preventDefault()
     const url = `${BASE_URL}/character?name=${input}`
     try {
       const response = await fetch(url)
@@ -306,7 +306,7 @@ function App() {
   }, [])
 
   const fetchCharacters = async (e) => {
-    e.preventDefault(0)
+    e.preventDefault()
     const url = `${BASE_URL}/character?name=${input}`
     try {
       const response = await fetch(url)
