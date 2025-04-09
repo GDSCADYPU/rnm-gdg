@@ -95,7 +95,7 @@ export default App
 ### 4. Update App.jsx
 This code contains the header section of the website with a background gradient, logo and search box.
 
-Download Rick and Morty Logo from [Logo Image Link](https://logolook.net/rick-and-morty-logo/) and place it inside the **ASSETS** folder.
+Download Rick and Morty Logo from [Logo Image Link](https://github.com/GDSCADYPU/rnm-gdg/blob/master/src/assets/logo.png) and place it inside the **ASSETS** folder.
 
 ```javascript
 import { useEffect, useState } from "react"
@@ -255,9 +255,6 @@ Create a folder name **components** inside the *src* folder. Create a file named
 function Card({ character }) {
     return (
         <>
-            {
-                character && (
-
                     <div className=" p-8 rounded-3xl shadow-md flex flex-row gap-7 bg-[#c0ccd3]">
                         <img src={character.image} alt={character.name} className="rounded-xl shadow-lg shadow-[#3d6055] " />
                         <div className="flex flex-col justify-around flex-1">
@@ -272,9 +269,6 @@ function Card({ character }) {
                             <div></div>
                         </div>
                     </div>
-
-                )
-            }
         </>
     )
 }
@@ -349,7 +343,7 @@ function App() {
 
         <div className="flex items-center justify-center flex-col">
           {character && (
-            <Card character={character} key={character.id} />
+            <Card character={character} />
           )}
         </div>
 
@@ -393,7 +387,7 @@ function App() {
   }, [])
 
   const fetchCharacters = async (e) => {
-    e.preventDefault(0)
+    e.preventDefault()
     const url = `${BASE_URL}/character?name=${input}`
     try {
       const response = await fetch(url)
@@ -499,7 +493,7 @@ function App() {
   }, [input])
 
   const fetchCharacters = async (e) => {
-    e.preventDefault(0)
+    e.preventDefault()
     const url = `${BASE_URL}/character?name=${input}`
     try {
       const response = await fetch(url)
