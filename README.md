@@ -99,7 +99,7 @@ Download Rick and Morty Logo from [Logo Image Link](https://github.com/GDSCADYPU
 
 ```javascript
 import { useEffect, useState } from "react"
-import logo from "./assets/image.png"
+import logo from "./assets/logo.png"
 
 function App() {
 
@@ -160,7 +160,7 @@ When searching for a character, an object is printed out on the console containi
 
 ```javascript
 import { useEffect, useState } from "react"
-import logo from "./assets/image.png"
+import logo from "./assets/logo.png"
 
 function App() {
 
@@ -280,7 +280,7 @@ Update App.jsx
 
 ```javascript
 import { useEffect, useState } from "react"
-import logo from "./assets/image.png"
+import logo from "./assets/logo.png"
 import Card from "./components/Card"
 
 function App() {
@@ -361,7 +361,7 @@ Conditionally rendering a character card or the results of a search query.
 
 ```javascript
 import { useEffect, useState } from "react"
-import logo from "./assets/image.png"
+import logo from "./assets/logo.png"
 import Card from "./components/Card"
 
 function App() {
@@ -457,7 +457,7 @@ Fix.
 ```javascript
 import { useEffect, useState } from "react"
 import Card from "./components/Card"
-import logo from "./assets/image.png"
+import logo from "./assets/logo.png"
 
 
 function App() {
